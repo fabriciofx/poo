@@ -10,7 +10,7 @@ import com.github.fabriciofx.poo.ro.GreaterThan;
 
 public final class GreaterThanTest {
 	@Test
-	public void compareIntegers() {
+	public void aGreaterThanB() {
 		final Condition gt = new GreaterThan(
 			new Integer(3),
 			new Integer(2)
@@ -19,7 +19,7 @@ public final class GreaterThanTest {
 	}
 
 	@Test
-	public void compareIntegers2() {
+	public void bGreaterThanA() {
 		final Condition gt = new GreaterThan(
 			new Integer(2),
 			new Integer(3)

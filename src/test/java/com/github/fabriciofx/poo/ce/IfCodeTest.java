@@ -10,7 +10,9 @@ public final class IfCodeTest {
 	@Test
 	public void isTrue() throws Exception {
 		boolean result = new IfCode(
-			new GreaterThan<Integer>(2, 1)).isTrue(() -> {
+				new GreaterThan(2, 1)
+		).isTrue(
+			() -> {
 				return true;
 			}
 		);

@@ -3,16 +3,16 @@ package com.github.fabriciofx.poo.ro;
 import com.github.fabriciofx.poo.ce.Condition;
 
 public final class LessThanOrEqualTo<T> implements Condition {
-	private final Comparable<T> comparable;
-	private final T object;
+	private final Number a;
+	private final Number b;
 
-	public LessThanOrEqualTo(final Comparable<T> comparable, final T object) {
-		this.comparable = comparable;
-		this.object = object;
+	public LessThanOrEqualTo(final Number a, final Number b) {
+		this.a = a;
+		this.b = b;
 	}
-	
+
 	@Override
 	public Boolean eval() {
-		return comparable.compareTo(object) <= 0;
-	}
+		return a.doubleValue() <= b.doubleValue() ? true : false;
+	}	
 }

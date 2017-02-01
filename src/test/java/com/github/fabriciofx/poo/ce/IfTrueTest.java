@@ -11,7 +11,7 @@ public final class IfTrueTest {
 	@Test
 	public void ifTrue() {
 		new IfTrue<Void>(
-			new GreaterThan<Integer>(2, 1),
+			new GreaterThan(2, 1),
 			new Callable<Void>() {
 				@Override
 				public Void call() throws Exception {

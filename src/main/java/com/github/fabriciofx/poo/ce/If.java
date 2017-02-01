@@ -1,6 +1,7 @@
 package com.github.fabriciofx.poo.ce;
 
-import com.github.fabriciofx.poo.Expression;
+import com.github.fabriciofx.poo.exp.Condition;
+import com.github.fabriciofx.poo.exp.Expression;
 
 public final class If<T> implements Expression<T> {
 	private final Condition condition;

@@ -1,6 +1,6 @@
 package com.github.fabriciofx.poo.ro;
 
-import com.github.fabriciofx.poo.ce.Condition;
+import com.github.fabriciofx.poo.exp.Condition;
 
 public final class GreaterThan implements Condition {
 	private final Number a;

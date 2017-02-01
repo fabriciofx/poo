@@ -2,6 +2,8 @@ package com.github.fabriciofx.poo.ce;
 
 import java.util.concurrent.Callable;
 
+import com.github.fabriciofx.poo.exp.Condition;
+
 public final class IfCode {
 	private final Condition condition;
 

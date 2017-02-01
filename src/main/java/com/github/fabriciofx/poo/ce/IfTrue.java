@@ -2,7 +2,8 @@ package com.github.fabriciofx.poo.ce;
 
 import java.util.concurrent.Callable;
 
-import com.github.fabriciofx.poo.Expression;
+import com.github.fabriciofx.poo.exp.Condition;
+import com.github.fabriciofx.poo.exp.Expression;
 
 public final class IfTrue<T> implements Expression<T> {
 	private final Condition condition;

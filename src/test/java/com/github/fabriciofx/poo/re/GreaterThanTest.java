@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.github.fabriciofx.poo.ce.Condition;
+import com.github.fabriciofx.poo.exp.Condition;
 import com.github.fabriciofx.poo.ro.GreaterThan;
 
 public final class GreaterThanTest {

@@ -12,21 +12,44 @@ public final class Round {
 	}
 
 	public void start() {
-		final Move o = this.one.move();
-		final Move t = this.two.move();
-		this.ui.print(
-			String.format("%s played ")
-		);
-		if (o.value() == 'R' && t.value() == 'S' ||
-			o.value() == 'P' && t.value() == 'R' ||
-			o.value() == 'S' && t.value() == 'P') {
-			this.ui.print(this.one.name() + " wins!\n"); 
-		} else if (o.value() == 'R' && t.value() == 'P' ||
-			o.value() == 'P' && t.value() == 'S' ||
-			o.value() == 'S' && t.value() == 'R') {
-			this.ui.print(this.two.name() + " wins!\n"); 
-		} else {
-			this.ui.print("Tie!\n"); 
+		final Move one = this.one.move(this.ui);
+		final Move two = this.two.move(this.ui);
+		switch(one.compareTo(two)) {
+		case -1:
+			ui.print(
+				String.format(
+					"%s wins!! %s played %s and %s played %s\n",
+					this.one.name(),
+					this.one.name(),
+					one,
+					this.two.name(),
+					two
+				)
+			);
+			break;
+		case 0:
+			ui.print(
+				String.format(
+					"Tie!! %s played %s and %s played %s\n",
+					this.one.name(),
+					one,
+					this.two.name(),
+					two
+				)
+			);
+			break;
+		case 1:
+			ui.print(
+				String.format(
+					"%s wins!! %s played %s and %s played %s\n",
+					this.two.name(),
+					this.one.name(),
+					one,
+					this.two.name(),
+					two
+				)
+			);
+			break;
 		}
 	}
 }

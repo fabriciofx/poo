@@ -1,10 +1,24 @@
 package com.github.fabriciofx.poo.rps;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public final class Human implements Player {
-	private final Ui ui;
+	private final Map<Character, Move> moves;
 	
-	public Human(final Ui ui) {
-		this.ui = ui;
+	public Human() {
+		this(new HashMap<Character, Move>() {
+			private static final long serialVersionUID = -4810641108913835343L;
+			{
+				put('R', new Move("Rock"));
+				put('P', new Move("Paper"));
+				put('S', new Move("Scissors"));
+			}}
+		);
+	}
+	
+	public Human(final Map<Character, Move> moves) {
+		this.moves = moves;
 	}
 	
 	@Override
@@ -13,8 +27,10 @@ public final class Human implements Player {
 	}
 	
 	@Override
-	public Move move() {
-		this.ui.print("What is your move (Rock, Paper or Scissors)? ");
-		return Move.ALL.get(this.ui.character("[rpsRPS]"));
+	public Move move(final Ui ui) {
+		ui.print("What is your move (Rock, Paper or Scissors)? ");
+		return this.moves.get(
+			Character.toUpperCase(ui.character("[rpsRPS]"))
+		);
 	}
 }

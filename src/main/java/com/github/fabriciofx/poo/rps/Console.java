@@ -11,6 +11,6 @@ public final class Console implements Ui {
 	@Override
 	public char character(final String pattern) {
 		final Scanner keyboard = new Scanner(System.in);
-		return Character.toUpperCase(keyboard.next(pattern).charAt(0));
+		return keyboard.next(pattern).charAt(0);
 	}
 }

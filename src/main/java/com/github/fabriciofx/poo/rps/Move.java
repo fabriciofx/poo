@@ -1,54 +1,31 @@
 package com.github.fabriciofx.poo.rps;
 
-import java.util.HashMap;
-import java.util.Map;
+public final class Move implements Comparable<Move> {
+	private final String name;
 
-public interface Move {
-	void print(Ui ui);
-	
-	char value();
-	
-	Move ROCK = new Move() {
-		@Override
-		public void print(final Ui ui) {
-			ui.print("Rock");
-		}
+	public Move(final String name) {
+		this.name = name;
+	}
 
-		@Override
-		public char value() {
-			return 'R';
+	@Override
+	public int compareTo(final Move move) {
+		final int cmp;
+		if (this.name.equals("Rock") && move.name.equals("Scissors")
+			|| this.name.equals("Paper") && move.name.equals("Rock")
+			|| this.name.equals("Scissors") && move.name.equals("Paper")) {
+			cmp = -1;
+		} else if (this.name.equals("Rock") && move.name.equals("Paper")
+			|| this.name.equals("Paper") && move.name.equals("Scissors")
+			|| this.name.equals("Scissors") && move.name.equals("Rock")) {
+			cmp = 1;
+		} else {
+			cmp = 0;
 		}
-	};
+		return cmp;	
+	}
 	
-	Move PAPER = new Move() {
-		@Override
-		public void print(final Ui ui) {
-			ui.print("Paper");
-		}
-
-		@Override
-		public char value() {
-			return 'P';
-		}
-	};
-	
-	Move SCISSORS = new Move() {
-		@Override
-		public void print(final Ui ui) {
-			ui.print("Rock");
-		}
-
-		@Override
-		public char value() {
-			return 'S';
-		}
-	};
-	
-	Map<Character, Move> ALL = new HashMap<Character, Move>() {
-		private static final long serialVersionUID = 9082923806347924956L;
-	{
-		put('R', ROCK);
-		put('P', PAPER);
-		put('S', SCISSORS);
-	}};
+	@Override
+	public String toString() {
+		return name;
+	}
 }

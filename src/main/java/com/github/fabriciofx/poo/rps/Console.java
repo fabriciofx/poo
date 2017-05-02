@@ -8,9 +8,9 @@ public final class Console implements Ui {
 		System.out.print(message);
 	}
 
+	@SuppressWarnings("resource")
 	@Override
 	public char character(final String pattern) {
-		final Scanner keyboard = new Scanner(System.in);
-		return keyboard.next(pattern).charAt(0);
+		return new Scanner(System.in).next(pattern).charAt(0);
 	}
 }

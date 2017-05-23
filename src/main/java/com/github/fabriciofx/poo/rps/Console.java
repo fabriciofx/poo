@@ -10,7 +10,8 @@ public final class Console implements Ui {
 
 	@SuppressWarnings("resource")
 	@Override
-	public char character(final String pattern) {
+	public char character(final String message, final String pattern) {
+		this.print(message);
 		return new Scanner(System.in).next(pattern).charAt(0);
 	}
 }

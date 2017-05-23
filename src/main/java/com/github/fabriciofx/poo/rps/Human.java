@@ -28,9 +28,13 @@ public final class Human implements Player {
 	
 	@Override
 	public Move move(final Ui ui) {
-		ui.print("What is your move (Rock, Paper or Scissors)? ");
 		return this.moves.get(
-			Character.toUpperCase(ui.character("[rpsRPS]"))
+			Character.toUpperCase(
+				ui.character(
+					"What is your move (Rock, Paper or Scissors)? ",
+					"[rpsRPS]"
+				)
+			)
 		);
 	}
 }

@@ -1,9 +1,9 @@
 package com.github.fabriciofx.poo.rps;
 
-public final class Rps {
+public final class RockPaperScissors {
 	public static void main(String[] args) {
 		new Attempts(
-			new Round(
+			new Match(
 				new Console(),
 				new Computer(),
 				new Human()

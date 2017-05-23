@@ -1,11 +1,11 @@
 package com.github.fabriciofx.poo.rps;
 
-public final class Round {
+public final class Match {
 	private final Ui ui;
 	private final Player one;
 	private final Player two;
 
-	public Round(final Ui ui, final Player one, final Player two) {
+	public Match(final Ui ui, final Player one, final Player two) {
 		this.ui = ui;
 		this.one = one;
 		this.two = two;

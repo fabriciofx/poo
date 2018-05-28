@@ -13,7 +13,7 @@ public final class ChangeOneByOne<T> implements Statement {
     }
 
     @Override
-    public void eval() {
+    public void eval(final Runnable code) throws Exception {
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i].doubleValue() > array[i + 1].doubleValue()) {
                 Number temp = array[i];

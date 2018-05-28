@@ -10,10 +10,10 @@ public final class Max extends Number {
     private final Expression<Number> exp;
 
     public Max(final Number a, final Number b) {
-        this.exp = new If<Number>(
+        this.exp = new If<>(
             new GreaterThanOrEqualTo<Number>(a, b),
-            new Return<Number>(a),
-            new Return<Number>(b)
+            new Return<>(a),
+            new Return<>(b)
         );
     }
 
